@@ -16,6 +16,6 @@ feature 'Suspend a new project with default configuration' do
 
     staging_file = "#{project_path}/config/environments/staging.rb"
 
-    expect(IO.read(staging_file)).to eq template('staging.rb')
+    expect(IO.read(staging_file)).to match /^require_relative 'production'/
   end
 end
